@@ -16,7 +16,7 @@ from kivy.core.window import Window
 class MyApp(App):
     def build(self):
         # Run init setup functions here
-        # Window.size = (2000, 1000)
+        Window.size = (500, 300)
         #Config.init_config()
         self.title = 'Ground Control Event Logger'
 
