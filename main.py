@@ -12,6 +12,10 @@ import AppLayout
 from kivy.core.window import Window
 #import Config
 
+# TODO: Add mission label text box, and append mission identifier to each entry
+# TODO: Add config file to change defaults for custom inputs
+# TODO: Add message number counter, and make it incriment between instances of the program
+
 
 class MyApp(App):
     def build(self):
