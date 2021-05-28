@@ -4,6 +4,10 @@
 # 5/27/2021
 # Constructed for ACUASI at UAF
 
+# TODO: find time library for python and get to to ISO format
+# TODO: setup logfile to log text in textbox when button is pressed
+# TODO: setup python to executable compiler
+# TODO: expand UI to 3 custom button rows
 
 
 def log_from_buttton(text_to_log):
