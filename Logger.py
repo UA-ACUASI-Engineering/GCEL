@@ -7,6 +7,7 @@
 
 import csv
 from datetime import datetime
+#import AppLayout
 
 starting_time = datetime.now()
 logfile_string = starting_time.strftime('%Y-%m-%dT%H%M%S') + '_GCEL_Event_Log.csv'
@@ -22,6 +23,11 @@ def log_from_button(button):
     log(button.text)
 
 
+def log_from_button_uav(button):
+    print("Logging: ", button.text, "From UAV: ", button.uas_text_input.text)
+    log_uav(button.text, button.uas_text_input.text)
+
+
 def log_from_text_box_button(button):
     print("Logging: ", button.text_input.text)
     log(button.text_input.text)
@@ -35,4 +41,11 @@ def log(text):
     with open(logfile_string, 'a', newline='') as csvfile:
         logwriter = csv.writer(csvfile, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
         logwriter.writerow([datetime.now().isoformat(), text])
+        csvfile.close()
+
+
+def log_uav(text, uav_name):
+    with open(logfile_string, 'a', newline='') as csvfile:
+        logwriter = csv.writer(csvfile, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
+        logwriter.writerow([datetime.now().isoformat(), text, uav_name])
         csvfile.close()
